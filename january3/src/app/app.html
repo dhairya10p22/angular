@@ -9,8 +9,15 @@
 <button (click)=  "increment()">increment</button>
 <button (click)= "decrement ()">decrement</button>
 <button (click)= "reset()">reset</button>
+
 @if(num==20){
 <div style="width: 220px;height: 220px;background-color: aliceblue;">{{name}}</div>
+ <input  type='text' placeholder='enter name ' (input)="handleinputEvent($event)">
+ <div style="width: 200px ;height: 200px; background-color: rgb(26, 26, 1);"(mouseover)= "handlemouseoverEvent($event)"></div>
+ <div (keyup.enter)="handlekeyupEvent($event)"></div>
+
+
+
 }
 @else {
     <div style="width: 220px;height: 220px;background-color: red;">{{name}}</div>
@@ -20,3 +27,8 @@
 <button (click)="turnoff()">{{ num==20?'num is 20':'num is not 20'
 
     }}</button>
+
+    <hr>
+    <input type ='text' placeholder="enter the email" #emailfield>
+    <button (click)="getEmail(emailfield.value)">get email</button>
+    {{email}}
